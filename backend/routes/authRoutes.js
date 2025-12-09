@@ -9,6 +9,16 @@
 
 // module.exports = router;
 
+// const express = require("express");
+// const { login, seedAdmin } = require("../controllers/authController");
+// const router = express.Router();
+
+// router.post("/login", login);
+// router.get("/seed-admin", seedAdmin); // first time run only
+
+// module.exports = router;
+
+
 const express = require("express");
 const { login, seedAdmin } = require("../controllers/authController");
 const router = express.Router();
