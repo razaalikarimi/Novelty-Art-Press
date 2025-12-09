@@ -167,8 +167,8 @@ const seedAdmin = async (req, res) => {
   try {
     const adminEmail = process.env.ADMIN_EMAIL;
     const adminPass = process.env.ADMIN_PASSWORD;
-    const adminName = process.env.ADMIN_NAME || "Admin";
-    const adminRole = process.env.ADMIN_ROLE || "admin";
+    const adminName = process.env.ADMIN_NAME ;
+    const adminRole = process.env.ADMIN_ROLE ;
 
     const existing = await User.findOne({ email: adminEmail });
 
