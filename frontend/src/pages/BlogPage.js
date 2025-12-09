@@ -1,42 +1,7 @@
-// import React from "react";
-
-// const BlogPage = () => {
-//   const items = [
-//     {
-//       title: "Restaurant Menu Printing",
-//       desc: "Multi-page menu for a local restaurant with laminated cover.",
-//     },
-//     {
-//       title: "Event Branding Kit",
-//       desc: "Backdrops, standees and handouts for a corporate event.",
-//     },
-//     {
-//       title: "Packaging Sleeves",
-//       desc: "Custom printed sleeves for a D2C food brand.",
-//     },
-//   ];
-
-//   return (
-//     <div className="page-container">
-//       <h1>Portfolio / Work Samples</h1>
-//       <div className="card-grid">
-//         {items.map((i) => (
-//           <div className="card" key={i.title}>
-//             <h3>{i.title}</h3>
-//             <p>{i.desc}</p>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default BlogPage;
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5000/api";
+const API_BASE = process.env.REACT_APP_API_BASE;
 
 const BlogPage = () => {
   const [items, setItems] = useState([]);
