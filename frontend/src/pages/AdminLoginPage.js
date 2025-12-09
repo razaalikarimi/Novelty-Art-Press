@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../components/AuthContext";
 
-const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5000/api";
+const API_BASE = process.env.REACT_APP_API_BASE;
 
 const AdminLoginPage = () => {
   const [email, setEmail] = useState("");
