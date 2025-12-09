@@ -1,0 +1,111 @@
+/* ===================== GLOBAL COLOR ===================== */
+:root {
+  --primary-bg: #0d1117;         /* navbar + footer same color */
+  --primary-light: #161b22;
+  --text-light: #c9d1d9;
+  --text-white: #ffffff;
+  --accent: #58a6ff;             /* hover color */
+}
+
+/* ===================== NAVBAR ===================== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.3rem 2.5rem;
+  background: var(--primary-bg);
+  border-bottom: 1px solid #222;
+  color: var(--text-white);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.navbar-brand a {
+  font-weight: 800;
+  font-size: 1.45rem;
+  color: var(--text-white);
+  letter-spacing: .04em;
+}
+
+.navbar-links a {
+  color: var(--text-light);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: .48rem .85rem;
+  border-radius: 30px;
+  transition: .25s ease;
+}
+
+.navbar-links a:hover,
+.nav-link-active {
+  color: var(--accent);
+  background: rgba(88,166,255,.15);
+}
+
+/* Mobile */
+@media(max-width:640px){
+  .navbar{flex-direction:column;align-items:flex-start;padding:1.1rem 1.3rem;}
+  .navbar-links{flex-wrap:wrap;}
+}
+
+/* ===================== FOOTER ===================== */
+
+.footer {
+  background: var(--primary-bg);
+  border-top: 1px solid #222;
+  color: var(--text-light);
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.footer-inner {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  gap: 2rem;
+  padding: 0 1.5rem;
+}
+
+.footer-brand-text h3 {
+  color: var(--text-white);
+}
+
+.footer-col h4 {
+  color: var(--text-white);
+  margin-bottom: .8rem;
+}
+
+.footer-col a {
+  color: var(--accent);
+  text-decoration:none;
+  margin-bottom:.35rem;
+}
+
+.footer-col a:hover {
+  text-decoration:underline;
+}
+
+.footer-text-line {
+  margin-bottom:.28rem;
+  color: var(--text-light);
+}
+
+@media(min-width:900px){
+  .footer-inner{
+    grid-template-columns:repeat(4,1fr);
+  }
+}
+
+.footer-bottom {
+  border-top:1px solid #222;
+  background: var(--primary-light);
+  text-align:center;
+  padding:1rem;
+  color:var(--text-light);
+}
+
+.footer-bottom a{color:var(--accent);}
+.footer-bottom a:hover{text-decoration:underline;}
+

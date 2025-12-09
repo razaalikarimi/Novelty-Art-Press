@@ -1,0 +1,69 @@
+/* ================== GLOBAL LAYOUT ================== */
+.app-container{min-height:100vh;display:flex;flex-direction:column;}
+.main-content{flex:1;}
+
+
+/* ================== NAVBAR ================== */
+.navbar{
+  display:flex;justify-content:space-between;align-items:center;
+  background:#1f1f27;color:#fff;padding:1.4rem 2.5rem;border-bottom:1px solid #222;
+  position:sticky;top:0;z-index:20;
+}
+.brand-logo{display:flex;align-items:center;gap:10px;}
+.nav-logo{height:48px;}
+.navbar-brand a{color:#fff;font-size:1.45rem;font-weight:800;}
+.navbar-links{display:flex;gap:0.9rem;}
+.navbar-links a{
+  color:#c9d1d9;font-weight:500;padding:0.48rem 0.85rem;border-radius:999px;
+  transition:.2s;
+}
+.navbar-links a:hover{background:#3a3f47;color:#58a6ff;}
+.nav-link-active{background:#4a80ff30;color:#fff!important;}
+
+@media(max-width:650px){
+  .navbar{flex-direction:column;align-items:flex-start;gap:.6rem;padding:1rem;}
+}
+
+
+/* ================== FOOTER 4 COLUMN ================== */
+.footer{background:#1f1f27;color:#c9d1d9;padding-top:30px;margin-top:30px;border-top:1px solid #222;}
+.footer-inner{
+  width:100%;display:grid;grid-template-columns:repeat(4,1fr);
+  gap:3rem;padding:0 3rem 2rem;
+}
+
+/* Column Titles */
+.footer-col h4{font-size:1.05rem;color:#fff;margin-bottom:8px;font-weight:700;}
+.footer-col a{display:block;margin-bottom:4px;color:#58a6ff;}
+.footer-col a:hover{text-decoration:underline;}
+
+/* Bigger Logo + Text */
+.footer-logo{width:210px;margin-bottom:12px;}
+.footer-brand p{font-size:1rem;line-height:1.55rem;font-weight:500;color:#dde2e8;}
+.footer-brand h4{font-size:1.1rem;font-weight:700;margin-top:12px;color:white;}
+
+/* Social Icons Bigger */
+.social-icons{display:flex;gap:12px;margin-top:8px;}
+.social-icons a{
+  width:40px;height:40px;font-size:18px;border-radius:8px;
+  background:#252a31;color:#fff;border:1px solid #333;display:flex;align-items:center;justify-content:center;
+  transition:.25s;
+}
+.social-icons a:hover{background:#1f7ae0;border-color:#5aaaff;transform:translateY(-3px);}
+
+/* Contact Area */
+.footer-hours-row{display:flex;justify-content:space-between;font-size:.9rem;}
+.footer-hours-row.closed span:last-child{color:#ff4b4b;font-weight:700;}
+.footer-contact-link{color:#58a6ff;margin-top:6px;display:inline-block;}
+
+/* Bottom */
+.footer-bottom{text-align:center;padding:12px 0;border-top:1px solid #222;color:#aaa;}
+.footer-bottom-tags{color:#fff;font-weight:600;margin-top:5px;}
+
+
+/* ================== RESPONSIVE ================== */
+@media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;}}
+@media(max-width:550px){
+  .footer-inner{grid-template-columns:1fr;text-align:center;}
+  .footer-brand{margin:auto;}
+}

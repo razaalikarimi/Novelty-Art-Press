@@ -1,0 +1,159 @@
+/* ===========================
+   ADMIN PAGE LAYOUT
+   =========================== */
+
+.admin-page {
+  padding-top: 3rem;
+}
+
+.admin-page h1 {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.admin-page > .small-text {
+  margin-top: 0.1rem;
+  color: var(--text-muted);
+}
+
+/* Grid layout (sidebar + content) */
+
+.admin-layout {
+  display: grid;
+  gap: 1.7rem;
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 900px) {
+  .admin-layout {
+    grid-template-columns: 230px minmax(0, 1fr);
+  }
+}
+
+/* ===========================
+   SIDEBAR
+   =========================== */
+
+.admin-sidebar {
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 1rem 0.9rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.admin-sidebar button {
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #4b5563;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.admin-sidebar button:hover {
+  background: #f3f4ff;
+  border-color: var(--border);
+  color: #111827;
+}
+
+/* Active tab */
+
+.admin-sidebar button.is-active {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.45);
+}
+
+/* Mobile behaviour */
+
+@media (max-width: 900px) {
+  .admin-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admin-sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .admin-sidebar button {
+    text-align: center;
+    flex: 1 1 auto;
+  }
+}
+
+/* ===========================
+   CONTENT PANEL
+   =========================== */
+
+.admin-content {
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  padding: 1.4rem 1.6rem;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.admin-content h2 {
+  margin-top: 0;
+}
+
+/* ===========================
+   TABLES (admin override)
+   =========================== */
+
+.admin-content .simple-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.admin-content .simple-table th,
+.admin-content .simple-table td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.admin-content .simple-table thead {
+  background: #f9fafb;
+}
+
+.admin-content .simple-table th {
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.admin-content .simple-table tr:hover td {
+  background: #f9fafb;
+}
+
+/* ===========================
+   LOG LIST (admin)
+   =========================== */
+
+.admin-content .log-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.admin-content .log-list li {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #edf2f7;
+}

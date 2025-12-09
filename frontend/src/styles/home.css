@@ -1,0 +1,288 @@
+/* ====== HERO (Home) ====== */
+
+.hero {
+  padding: 4rem 1.5rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background image behind hero text */
+.hero-bg {
+  background-image: url("../assets/bg-print-pattern.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Glass overlay so text clear rahe */
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* background: rgba(255, 255, 255, 0.76); */
+  backdrop-filter: blur(0.7px);
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 640px;
+  color: var(--text-muted);
+}
+
+.hero-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Request a Quote button – thoda blur / glassy look */
+.hero-secondary-btn {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--text-main);
+  border-color: rgba(148, 163, 184, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+/* ====== WHY CHOOSE US / FEATURES ====== */
+
+.feature-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .feature-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.feature-item {
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  background: #ffffff;
+}
+
+/* ====== HOW IT WORKS (STEPS) ====== */
+
+.steps {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.3rem auto 0;
+  display: grid;
+  gap: 0.9rem;
+  counter-reset: step;
+  max-width: 720px;          /* center & shorter width */
+}
+
+.steps li {
+  position: relative;
+  padding: 0.6rem 1.2rem 0.6rem 2.6rem;
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.04);
+  font-size: 0.95rem;
+}
+
+.steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ====== CTA SECTION ====== */
+
+.cta-section {
+  text-align: center;
+}
+
+.cta-section p {
+  max-width: 460px;
+  margin: 0.5rem auto 1.2rem;
+}
+
+/* ===========================
+   FEATURED PRODUCTS CAROUSEL
+   (ONLY IMAGE CARDS)
+   =========================== */
+
+.featured-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.product-carousel {
+  position: relative;
+  min-height: 260px; /* slide change pe jump na ho */
+}
+
+/* Slide container */
+.product-slide {
+  display: none;
+  gap: 1.5rem;
+}
+
+.product-slide.is-active {
+  display: grid;
+}
+
+/* Desktop – 4 per row */
+@media (min-width: 1024px) {
+  .product-slide.is-active {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Tablet – 2 per row */
+@media (max-width: 1023px) and (min-width: 640px) {
+  .product-slide.is-active {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile – 1 per row */
+@media (max-width: 639px) {
+  .product-slide.is-active {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card only image */
+.product-card-only-image {
+  padding: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Image wrapper – size control */
+.product-card-image-wrapper.only-image {
+  width: 100%;
+  height: 230px;              /* 👈 yahan se image size bada/ chhota kar sakte ho */
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--border);
+}
+
+/* Image itself */
+.product-card-image.only-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Hover zoom effect */
+.product-card-only-image:hover .product-card-image.only-image {
+  transform: scale(1.05);
+}
+
+/* dots under slider */
+.product-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.product-carousel-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: none;
+  background: #d1d5db;
+  cursor: pointer;
+}
+
+.product-carousel-dots button.is-active {
+  width: 18px;
+  background: var(--primary);
+}
+
+/* ===========================
+   TESTIMONIAL CAROUSEL
+   =========================== */
+
+.testimonial-carousel {
+  position: relative;
+  overflow: hidden;
+  margin-top: 1.4rem;
+}
+
+.testimonial-slide {
+  display: none;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.testimonial-slide.is-active {
+  display: grid;
+}
+
+@media (max-width: 900px) {
+  .testimonial-slide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .testimonial-slide {
+    grid-template-columns: 1fr;
+  }
+}
+
+.testimonial-name {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.testimonial-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: none;
+  background: #d1d5db;
+  cursor: pointer;
+}
+
+.testimonial-dots button.is-active {
+  background: var(--primary);
+  width: 16px;
+}
